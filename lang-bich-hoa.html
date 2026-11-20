@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a2351">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Làng bích họa – Số hóa di tích Song Lộc</title>
+<meta name="description" content="Làng bích họa “Không gian ký ức” trong Làng Văn hóa – Du lịch Khmer Trà Vinh với 78 bích họa tái hiện đời sống, nghề truyền thống và tín ngưỡng của người Khmer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ===== Riêng trang Làng bích họa ===== */
+.gal-title{font-size:1.4rem;color:var(--navy);margin:0 0 16px;display:flex;align-items:center;gap:10px}
+.gal-title::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.gal-block{margin-bottom:64px}
+.gs{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#0a2351;touch-action:pan-y}
+.gs-track{display:flex;transition:transform .7s cubic-bezier(.65,0,.35,1)}
+.gs-slide{flex:0 0 100%;aspect-ratio:16/9;position:relative;margin:0;background:#0a2351}
+.gs-slide img{width:100%;height:100%;object-fit:contain;cursor:zoom-in}
+.gs-slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 22px 16px;color:#fff;font-size:.95rem;background:linear-gradient(transparent,rgba(5,15,40,.85))}
+.gs-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.88);color:var(--navy);font-size:1.6rem;cursor:pointer;z-index:2;transition:.25s;display:grid;place-items:center;line-height:1}
+.gs-btn:hover{background:var(--gold)}
+.gs-btn.prev{left:14px}.gs-btn.next{right:14px}
+.gs-count{position:absolute;top:14px;right:14px;background:rgba(10,35,81,.8);color:#fff;padding:5px 14px;border-radius:20px;font-size:.8rem;z-index:2}
+.gs-thumbs{display:flex;gap:10px;margin-top:12px;overflow-x:auto;scrollbar-width:none}
+.gs-thumbs::-webkit-scrollbar{display:none}
+.gs-thumbs button{flex:0 0 96px;aspect-ratio:4/3;border:3px solid transparent;border-radius:12px;overflow:hidden;padding:0;cursor:pointer;opacity:.6;transition:.25s;background:#ddd}
+.gs-thumbs button.on{border-color:var(--gold);opacity:1}
+.gs-thumbs img{width:100%;height:100%;object-fit:cover}
+.masonry{columns:4 220px;column-gap:14px}
+.masonry figure{margin:0 0 14px;break-inside:avoid;border-radius:14px;overflow:hidden;box-shadow:0 8px 22px rgba(10,35,81,.14);cursor:zoom-in}
+.masonry img{width:100%;height:auto;display:block;transition:transform .6s,filter .4s}
+.masonry figure:hover img{transform:scale(1.07);filter:brightness(1.08)}
+.m-intro .photo .img-slot{background:linear-gradient(135deg,#14449a,#0a2351)}
+.content-col{max-width:900px;margin:0 auto}
+#gLb{position:fixed;inset:0;background:rgba(5,15,40,.94);z-index:3000;display:none;align-items:center;justify-content:center;padding:20px}
+#gLb.open{display:flex}
+#gLb figure{margin:0;max-width:1100px;width:100%;text-align:center}
+#gLb img{max-width:100%;max-height:78vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5);margin:auto}
+#gLb figcaption{color:#fff;margin-top:12px;font-size:.95rem}
+#gLb button{position:absolute;background:rgba(255,255,255,.15);color:#fff;border:0;width:48px;height:48px;border-radius:50%;font-size:1.5rem;cursor:pointer;transition:.25s}
+#gLb button:hover{background:var(--gold);color:var(--navy)}
+#gLb .x{top:16px;right:16px}#gLb .p{left:16px;top:50%}#gLb .n{right:16px;top:50%}
+@media(max-width:700px){
+  .gs-slide{aspect-ratio:4/3}
+  .gs-btn{width:38px;height:38px}
+  .gs-thumbs button{flex-basis:72px}
+  .masonry{columns:2 140px;column-gap:10px}
+  .masonry figure{margin-bottom:10px}
+  #gLb .p,#gLb .n{top:auto;bottom:20px}
+}
+</style>
+<style>@media(max-width:700px){.bottom-nav{grid-template-columns:repeat(3,1fr)}}</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<!-- Header -->
+<header class="nav" id="nav">
+  <div class="container nav-in">
+    <a href="index.html" class="brand">
+      <div class="logo"><img src="Anh/logodoan.png" alt="Logo Đoàn TNCS Hồ Chí Minh"></div>
+      <span>Đoàn TNCS Hồ Chí Minh<small>Xã Song Lộc – tỉnh Vĩnh Long</small></span>
+    </a>
+    <nav id="menu">
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="chua-lo-gach.html">Di tích Bờ Lũy – chùa Lò Gạch</a></li>
+        <li><a href="lang-bich-hoa.html" class="active">Làng bích họa</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Mở menu">☰</button>
+  </div>
+</header>
+
+<!-- Hero trang con -->
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Trang chủ</a> &nbsp;›&nbsp; Làng bích họa</div>
+    <span class="tag"><i></i> Nghệ thuật đương đại</span>
+    <h1>Làng bích họa <em>“Không gian ký ức”</em></h1>
+    <p class="lead">Một trong 30 hạng mục của Dự án Làng Văn hóa – Du lịch Khmer tỉnh Trà Vinh, khánh thành cuối năm 2018 với 78 bức bích họa.</p>
+  </div>
+</section>
+
+<!-- Giới thiệu -->
+<section class="murals" id="bich-hoa">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker" style="color:var(--gold)">Nghệ thuật đương đại</span>
+      <h2>Tái hiện làng quê Khmer xưa</h2>
+      <p>Con đường bích họa vẽ tranh tường 3D, đưa du khách vào không gian văn hóa của đồng bào Khmer Nam Bộ.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="m-intro">
+      <div class="reveal left">
+        <p>Trà Vinh là địa phương có đông đồng bào Khmer sinh sống (hơn 32% dân số) và có 142 ngôi chùa Phật giáo Nam tông Khmer với kiến trúc độc đáo. Lễ hội Ok Om Bok của người Khmer đã được công nhận là di sản văn hóa phi vật thể cấp quốc gia, tạo nền tảng để tỉnh phát triển du lịch văn hóa và tâm linh.</p>
+        <p>Làng bích họa “Không gian ký ức” nằm trong Làng Văn hóa – Du lịch Khmer Trà Vinh (ấp Ba Se, xã Lương Hòa, huyện Châu Thành), được xây dựng <b>Cổng và 78 bích họa</b> tái hiện đời sống, nghề truyền thống và tín ngưỡng của người Khmer.</p>
+        <p>Dịp lễ Ok Om Bok năm 2023, Sở Văn hóa, Thể thao và Du lịch tỉnh Trà Vinh hoàn thành việc bảo dưỡng, giúp làng bích họa “khoác áo mới” sau thời gian hư hỏng nặng.</p>
+      </div>
+      <div class="photo reveal right hover-zoom"><div class="img-slot"><img id="introImg" alt="Làng bích họa “Không gian ký ức”"></div></div>
+    </div>
+
+    <div class="chips reveal">
+      <button class="chip on" data-f="all">Tất cả</button>
+      <button class="chip" data-f="nghe">Nghề truyền thống</button>
+      <button class="chip" data-f="doisong">Đời sống</button>
+      <button class="chip" data-f="tinguong">Tín ngưỡng</button>
+    </div>
+
+    <p class="swipe-tip">← Vuốt ngang để xem thêm →</p>
+    <div class="m-grid" id="mGrid"></div>
+  </div>
+</section>
+
+<!-- Trải nghiệm -->
+<section class="heritage1" id="thong-tin">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Trải nghiệm du lịch</span>
+      <h2>Đến với “Không gian ký ức”</h2>
+      <p>Du khách vừa ngắm tranh, vừa hòa mình vào đời sống văn hóa Khmer.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="info-cards">
+      <div class="icard reveal d1"><div class="big">🎨</div><h3>Tranh tường 3D sinh động</h3><p>Con đường bích họa giới thiệu các vị thần, hình tượng Chằn, thần điểu… trong văn hóa Khmer.</p></div>
+      <div class="icard reveal d2"><div class="big">🎶</div><h3>Âm nhạc &amp; điệu múa</h3><p>Nghe dàn nhạc ngũ âm, nhịp trống Chhay-dăm và xem điệu Roam-vông truyền thống.</p></div>
+      <div class="icard reveal d3"><div class="big">🧵</div><h3>Làng nghề nghệ nhân</h3><p>Tham quan làng nghề, cùng nghệ nhân chế tác mũ (mão) và mặt nạ truyền thống.</p></div>
+      <div class="icard reveal d1" style="margin-top:24px"><div class="big">🍚</div><h3>Ẩm thực đặc sản</h3><p>Cùng giã cốm dẹp và thưởng thức các món ăn đặc sản của người Khmer.</p></div>
+      <div class="icard reveal d2" style="margin-top:24px"><div class="big">🏘️</div><h3>Một trong 30 hạng mục</h3><p>Thuộc Dự án Làng Văn hóa – Du lịch Khmer tỉnh Trà Vinh, khánh thành cuối năm 2018.</p></div>
+      <div class="icard reveal d3" style="margin-top:24px"><div class="big">📍</div><h3>Địa điểm</h3><p>Ấp Ba Se, xã Lương Hòa, huyện Châu Thành, tỉnh Trà Vinh.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Nội dung bích họa & mốc thời gian -->
+<section class="heritage1" id="y-nghia" style="background:#fff">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Hành trình của làng</span>
+      <h2>Từ khánh thành đến bảo dưỡng</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal"><div class="tl-card"><div class="year">Cuối 2018</div><h3>Khánh thành làng bích họa</h3><p>Là một trong 30 hạng mục của Dự án Làng Văn hóa – Du lịch Khmer tỉnh Trà Vinh, gồm Cổng và 78 bích họa.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-card"><div class="year">Những năm sau</div><h3>Xuống cấp, hư hỏng nặng</h3><p>Các bức bích họa bị hư hỏng nặng theo thời gian, cần được bảo dưỡng để giữ giá trị văn hóa.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-card"><div class="year">2023</div><h3>Bảo dưỡng, sửa chữa</h3><p>Sở Văn hóa, Thể thao và Du lịch đầu tư khoảng 2,4 tỷ đồng, hoàn thành dịp lễ hội Ok Om Bok để đón du khách.</p></div></div>
+    </div>
+
+    <div class="content-col reveal">
+      <h3 style="font-size:1.6rem;color:var(--navy);margin-bottom:12px">Nội dung các bức bích họa</h3>
+      <p style="color:var(--muted);margin-bottom:12px">Các bức tranh thể hiện cảnh làng quê truyền thống của đồng bào Khmer thuở xưa, trò chơi dân gian, lễ hội, truyền thuyết, trích đoạn sân khấu dù kê và các điệu múa dân gian.</p>
+      <p style="color:var(--muted);margin-bottom:12px">Bên cạnh đó là hình ảnh lao động, sản xuất, chăn nuôi, phát triển kinh tế và tham gia xây dựng nông thôn mới của đồng bào Khmer.</p>
+      <div class="quote">Dự án bảo dưỡng nhằm khôi phục giá trị văn hóa, kiến trúc nghệ thuật, bảo tồn cảnh quan không gian văn hóa truyền thống gắn với đời sống tín ngưỡng của người Khmer.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Thư viện ảnh -->
+<section class="heritage1" id="thu-vien-anh">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Hình ảnh tư liệu</span>
+      <h2>Thư viện ảnh Làng bích họa</h2>
+      <p>Bấm vào ảnh để xem phóng to.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="gal-block reveal">
+      <h3 class="gal-title">🎞️ Ảnh nổi bật</h3>
+      <div class="gs" id="gs">
+        <div class="gs-track" id="gsTrack"></div>
+        <button class="gs-btn prev" aria-label="Ảnh trước">‹</button>
+        <button class="gs-btn next" aria-label="Ảnh sau">›</button>
+        <div class="gs-count" id="gsCount"></div>
+      </div>
+      <div class="gs-thumbs" id="gsThumbs"></div>
+    </div>
+
+    <div class="gal-block reveal" style="margin-bottom:0">
+      <h3 class="gal-title">🖼️ Tất cả hình ảnh</h3>
+      <div class="masonry" id="gMasonry"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Bản đồ -->
+<section class="nearby" id="vi-tri">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Hành trình tham quan</span>
+      <h2>Vị trí &amp; lộ trình khám phá</h2>
+      <p>Làng nằm trong Làng Văn hóa – Du lịch Khmer Trà Vinh, thuận tiện kết hợp tham quan các điểm di sản lân cận.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="near-grid">
+      <div class="route reveal left">
+        <h3>Gợi ý lộ trình khám phá</h3>
+        <ul>
+          <li><i>1</i><span><b>Bờ Lũy – chùa Lò Gạch</b> – di tích khảo cổ cấp quốc gia</span></li>
+          <li><i>2</i><span><b>Làng bích họa “Không gian ký ức”</b> – Làng Văn hóa – Du lịch Khmer</span></li>
+          <li><i>3</i><span><b>Chùa Âng</b></span></li>
+          <li><i>4</i><span><b>Ao Bà Om</b></span></li>
+          <li><i>5</i><span><b>Bảo tàng Văn hóa Khmer Nam Bộ</b></span></li>
+        </ul>
+        <a class="btn primary btn-route" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=L%C3%A0ng+V%C4%83n+h%C3%B3a+Du+l%E1%BB%8Bch+Khmer+Tr%C3%A0+Vinh">📍 Chỉ đường bằng Google Maps</a>
+      </div>
+      <div class="map-box reveal right">
+        <iframe loading="lazy" title="Bản đồ Làng Văn hóa – Du lịch Khmer Trà Vinh" src="https://www.google.com/maps?q=L%C3%A0ng+V%C4%83n+h%C3%B3a+Du+l%E1%BB%8Bch+Khmer+Tr%C3%A0+Vinh&output=embed" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Chuyển trang -->
+<section class="next-pages">
+  <div class="container">
+    <div class="sec-head reveal" style="margin-bottom:30px"><span class="kicker">Khám phá tiếp</span><h2 style="font-size:1.8rem">Xem thêm các điểm di sản khác</h2></div>
+    <div class="btns reveal">
+      <a href="chua-lo-gach.html" class="btn primary">Di tích Bờ Lũy – chùa Lò Gạch ➜</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="lien-he">
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <h4>Đoàn TNCS Hồ Chí Minh xã Song Lộc</h4>
+        <p>Tỉnh Vĩnh Long</p>
+        <p>Công trình thanh niên: Số hóa di tích Bờ Lũy – chùa Lò Gạch và Làng bích họa “Không gian ký ức”.</p>
+        <p>Email: xasongloc2026.12@gmail.com &nbsp; <br>Điện thoại: 0909 090 090</p>
+      </div>
+      <div>
+        <h4>Liên kết nhanh</h4>
+        <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="chua-lo-gach.html">Di tích Bờ Lũy – chùa Lò Gạch</a></li>
+          <li><a href="lang-bich-hoa.html">Làng bích họa</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Nguồn tư liệu</h4>
+        <ul>
+          <li>“Trải nghiệm du lịch tại Làng bích họa ‘Không gian ký ức’ của đồng bào Khmer tỉnh Trà Vinh” (20/11/2023)</li>
+          <li>Báo Tuổi trẻ / Tô Phục Hưng – “Bờ Lũy – chùa Lò Gạch” (18/01/2021)</li>
+          <li>VOV5 – Làng bích họa “Không gian ký ức”</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© 2026 Đoàn TNCS Hồ Chí Minh xã Song Lộc, tỉnh Vĩnh Long. Tư liệu được số hóa nhằm mục đích giáo dục và quảng bá văn hóa.</div>
+  </div>
+</footer>
+
+<!-- Lightbox thư viện ảnh -->
+<div id="gLb" aria-hidden="true">
+  <button class="x" aria-label="Đóng">✕</button>
+  <button class="p" aria-label="Ảnh trước">‹</button>
+  <button class="n" aria-label="Ảnh sau">›</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<nav class="bottom-nav" aria-label="Điều hướng nhanh">
+  <a href="index.html"><span>🏠</span>Trang chủ</a>
+  <a href="chua-lo-gach.html"><span>🏛️</span>Di tích</a>
+  <a href="lang-bich-hoa.html" class="on"><span>🎨</span>Bích họa</a>
+</nav>
+<button id="topBtn" aria-label="Lên đầu trang">↑</button>
+
+<script>
+(function(){
+  /* ====== DỮ LIỆU – chỉ dùng ảnh có trong Anh/LangBichHoa (1-1.jpg, 1.jpg … 13.jpg) ====== */
+  var BASE='Anh/LangBichHoa/';
+  var INTRO='1-1.jpg';
+  var CARDS=[
+    {c:'doisong',i:'🏘️',t:'Đường vào làng bích họa',d:'Đường vào Làng bích họa “Không gian ký ức” có 78 bích họa phản ánh về làng quê truyền thống của đồng bào dân tộc Khmer xưa kia.'},
+    {c:'nghe',i:'🧵',t:'Nghề dệt thổ cẩm',d:'Nghề dệt thổ cẩm – một trong những nghề truyền thống xuất hiện tại ngôi làng đồng bào Khmer thuở xưa.'},
+    {c:'doisong',i:'🛶',t:'Ghe xuồng',d:'Phương tiện di chuyển trước kia của đồng bào Khmer Nam Bộ chủ yếu bằng ghe xuồng.'},
+    {c:'doisong',i:'🏠',t:'Nhà sàn',d:'Đồng bào Khmer xưa thường ở nhà sàn, vật liệu chủ yếu bằng tre, tầm vông.'},
+    {c:'nghe',i:'🎭',t:'Mặt nạ chằn &amp; ghe Ngo',d:'Nghề chế tác mặt nạ chằn và đóng ghe Ngo phục vụ lễ hội đã có từ lâu đời.'},
+    {c:'tinguong',i:'🙏',t:'Đặt cơm bát',d:'Đồng bào Khmer chủ yếu theo đạo Phật (phái Nam tông), việc đặt cơm bát cho nhà sư là hoạt động thường xuyên từ trước tới nay.'},
+    {c:'doisong',i:'🌴',t:'Cây thốt nốt',d:'Làng quê Khmer thường được bao bọc bởi hàng cây thốt nốt – loại cây cung cấp nguyên liệu đường, gỗ và lá để lợp mái nhà.'},
+    {c:'tinguong',i:'🏛️',t:'Ngôi chùa Khmer',d:'Ngôi chùa vừa là nơi để con em tu, học chữ Khmer, vừa là nơi sinh hoạt cộng đồng, chủ yếu là các nghi lễ tôn giáo.'}
+  ];
+  var SLIDER=['1-1.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg'];
+  var ALL=['1-1.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg'];
+  /* ==================================================== */
+
+  var $=function(id){return document.getElementById(id)};
+  var U=function(f){return encodeURI(BASE+f)};
+  var cap=function(f){return 'Hình ảnh Làng bích họa “Không gian ký ức”'};
+  var bad='onerror="var f=this.closest(\'figure\');(f||this).remove();window.__galFix&&window.__galFix()"';
+
+  $('introImg').src=U(INTRO);
+  $('introImg').onerror=function(){this.style.display='none'};
+
+  $('mGrid').innerHTML=CARDS.map(function(m,k){
+    var n=('0'+(k+1)).slice(-2),dl=['','d1','d2','d3'][k%4];
+    return '<div class="mcard reveal zoom '+dl+'" data-c="'+m.c+'"><div class="body" style="padding:24px 22px"><div style="font-size:2.2rem;line-height:1">'+m.i+'</div><div class="num" style="margin-top:12px">'+n+'</div><h3>'+m.t+'</h3><p>'+m.d+'</p></div></div>';
+  }).join('');
+
+  $('gsTrack').innerHTML=SLIDER.map(function(f){
+    return '<figure class="gs-slide"><img data-lb src="'+U(f)+'" alt="'+cap(f)+'" '+bad+'></figure>';
+  }).join('');
+  $('gsThumbs').innerHTML=SLIDER.map(function(f,k){
+    return '<button aria-label="Ảnh '+(k+1)+'"><img src="'+U(f)+'" alt="" loading="lazy"></button>';
+  }).join('');
+  $('gMasonry').innerHTML=ALL.map(function(f){
+    return '<figure><img data-lb src="'+U(f)+'" alt="'+cap(f)+'" loading="lazy" '+bad+'></figure>';
+  }).join('');
+
+  /* Trình chiếu */
+  var gs=$('gs'),track=$('gsTrack'),cnt=$('gsCount'),thumbs=[].slice.call(document.querySelectorAll('#gsThumbs button')),i=0,timer;
+  function go(k){
+    var total=track.children.length;if(!total)return;
+    i=(k+total)%total;
+    track.style.transform='translateX('+(-i*100)+'%)';
+    cnt.textContent=(i+1)+' / '+total;
+    thumbs.forEach(function(t,j){t.classList.toggle('on',j===i)});
+  }
+  function auto(){clearInterval(timer);timer=setInterval(function(){go(i+1)},4500)}
+  gs.querySelector('.prev').onclick=function(){go(i-1);auto()};
+  gs.querySelector('.next').onclick=function(){go(i+1);auto()};
+  thumbs.forEach(function(t,j){t.onclick=function(){go(j);auto()}});
+  var sx=null;
+  gs.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  gs.addEventListener('touchend',function(e){
+    if(sx===null)return;
+    var d=e.changedTouches[0].clientX-sx;
+    if(Math.abs(d)>40){go(d<0?i+1:i-1);auto()}
+    sx=null;
+  });
+  gs.addEventListener('mouseenter',function(){clearInterval(timer)});
+  gs.addEventListener('mouseleave',auto);
+  window.__galFix=function(){go(i)};
+  go(0);auto();
+
+  /* Xem ảnh phóng to */
+  var lb=$('gLb'),big=lb.querySelector('img'),cp=lb.querySelector('figcaption'),cur=0;
+  function list(){return [].slice.call(document.querySelectorAll('img[data-lb]'))}
+  function show(k){
+    var L=list();if(!L.length)return;
+    cur=(k+L.length)%L.length;
+    big.src=L[cur].src;
+    cp.textContent=(cur+1)+' / '+L.length;
+  }
+  function open(k){show(k);lb.classList.add('open');document.body.style.overflow='hidden'}
+  function close(){lb.classList.remove('open');document.body.style.overflow=''}
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(t.tagName==='IMG'&&t.hasAttribute('data-lb')&&!lb.contains(t))open(list().indexOf(t));
+  });
+  lb.querySelector('.x').onclick=close;
+  lb.querySelector('.p').onclick=function(){show(cur-1)};
+  lb.querySelector('.n').onclick=function(){show(cur+1)};
+  lb.addEventListener('click',function(e){if(e.target===lb)close()});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(cur-1);
+    if(e.key==='ArrowRight')show(cur+1);
+  });
+})();
+</script>
+<script src="main.js"></script>
+</body>
+</html>

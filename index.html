@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a2351">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Số hóa di tích – Đoàn TNCS Hồ Chí Minh xã Song Lộc</title>
+<meta name="description" content="Công trình số hóa di tích Bờ Lũy – chùa Lò Gạch và Làng bích họa “Không gian ký ức” do Đoàn TNCS Hồ Chí Minh xã Song Lộc, tỉnh Vĩnh Long thực hiện.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>.gocards.two{grid-template-columns:repeat(2,1fr);max-width:900px;margin:0 auto}@media(max-width:1000px){.gocards.two{grid-template-columns:1fr}}@media(max-width:700px){.bottom-nav{grid-template-columns:repeat(3,1fr)}}</style>
+</head>
+<body>
+<!-- Preloader -->
+<div id="preloader">
+  <div class="loader-logo">
+    <div class="disc"><img src="Anh/logodoan.png" alt="Logo Đoàn TNCS Hồ Chí Minh" onerror="this.style.display='none'"></div>
+  </div>
+  <div class="loader-text">Đang tải di sản…</div>
+  <div class="loader-bar"><i></i></div>
+</div>
+<div id="progress"></div>
+
+<!-- Header -->
+<header class="nav" id="nav">
+  <div class="container nav-in">
+    <a href="index.html" class="brand">
+      <div class="logo"><img src="Anh/logodoan.png" alt="Logo Đoàn TNCS Hồ Chí Minh"></div>
+      <span>Đoàn TNCS Hồ Chí Minh<small>Xã Song Lộc – tỉnh Vĩnh Long</small></span>
+    </a>
+    <nav id="menu">
+      <ul>
+        <li><a href="index.html" class="active">Trang chủ</a></li>
+        <li><a href="chua-lo-gach.html">Di tích Bờ Lũy – chùa Lò Gạch</a></li>
+        <li><a href="lang-bich-hoa.html">Làng bích họa</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Mở menu">☰</button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <!-- Ảnh nền dùng ảnh có sẵn: Anh/anh2.jpg (đổi sang anh khác nếu muốn) -->
+  <div class="hero-bg" id="heroBg" style="background-image:url('Anh/anh2.jpg')"></div>
+  <canvas id="particles"></canvas>
+  <div class="container">
+    <div>
+      <span class="tag"><i></i> Công trình thanh niên – Chuyển đổi số di sản</span>
+      <h1>Số hóa di tích<br><em>Gìn giữ ký ức</em> văn hóa Khmer</h1>
+      <p class="lead">Công trình số hóa di tích do <b>Đoàn TNCS Hồ Chí Minh xã Song Lộc, tỉnh Vĩnh Long</b> thực hiện – đưa di sản đến gần hơn với mọi người. <span class="typed" id="typed"></span></p>
+      <div class="btns">
+        <a href="#di-tich" class="btn primary">Khám phá di tích ➜</a>
+        <a href="lang-bich-hoa.html" class="btn ghost">Xem Làng bích họa</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="frame"><div class="img-slot"><img src="Anh/anh1.jpg" alt="Di tích Bờ Lũy – chùa Lò Gạch" onerror="this.style.display='none'"></div></div>
+      <div class="badge"><b>VIII–IX</b><span>Thế kỷ<br>niên đại di tích</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">Cuộn xuống<div class="mouse"></div></div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat reveal d1"><b data-count="2">0</b><span>Di tích được số hóa</span></div>
+    <div class="stat reveal d2"><b data-count="78">0</b><span>Bích họa ở Làng “Không gian ký ức”</span></div>
+    <div class="stat reveal d3"><b data-count="2017">0</b><span>Năm công nhận Di tích cấp quốc gia</span></div>
+    <div class="stat reveal d4"><b data-count="6" data-suffix=" km">0</b><span>Cách trung tâm TP. Trà Vinh</span></div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-img reveal left">
+      <div class="a1 hover-zoom"><div class="img-slot"><img src="Anh/anh3.jpg" alt="Hoạt động của Đoàn xã Song Lộc" onerror="this.style.display='none'"></div></div>
+      <div class="a2 hover-zoom"><div class="img-slot"><img src="Anh/anh4.jpg" alt="Hoạt động của Đoàn xã Song Lộc" onerror="this.style.display='none'"></div></div>
+    </div>
+    <div class="about-text reveal right">
+      <span class="kicker" style="color:var(--saffron);font-weight:700;letter-spacing:.2em;font-size:.8rem;text-transform:uppercase">Về công trình</span>
+      <h2>Tuổi trẻ Song Lộc đưa di sản lên không gian số</h2>
+      <p>Hiểu rằng di sản chỉ thật sự sống khi được nhiều người biết đến, Đoàn TNCS Hồ Chí Minh xã Song Lộc triển khai công trình số hóa các điểm di tích tiêu biểu trong khu vực: <b>Bờ Lũy – chùa Lò Gạch</b> và <b>Làng bích họa “Không gian ký ức”</b>.</p>
+      <p>Công trình giúp người dân, du khách và thế hệ trẻ dễ dàng tiếp cận thông tin, hiện vật, hình ảnh về di sản ngay trên điện thoại và máy tính.</p>
+      <div class="feature-list">
+        <div class="feature reveal d1"><div class="ic">📚</div><div><b>Lưu trữ tư liệu số</b><span>Hình ảnh, mô tả, hiện vật và câu chuyện lịch sử được hệ thống hóa.</span></div></div>
+        <div class="feature reveal d2"><div class="ic">📱</div><div><b>Tiếp cận mọi lúc, mọi nơi</b><span>Giao diện thân thiện trên mọi thiết bị, dễ chia sẻ.</span></div></div>
+        <div class="feature reveal d3"><div class="ic">🌏</div><div><b>Quảng bá du lịch văn hóa</b><span>Góp phần giới thiệu văn hóa Khmer Nam Bộ đến du khách gần xa.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Các điểm di tích -->
+<section class="heritage1" id="di-tich">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Điểm di sản được số hóa</span>
+      <h2>Khám phá từng di tích</h2>
+      <p>Chọn một điểm đến để xem thông tin, hiện vật và hình ảnh chi tiết.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="gocards two">
+      <a href="chua-lo-gach.html" class="gocard reveal d2 hover-zoom"><div class="photo"><div class="img-slot"><img src="Anh/anh6.jpg" alt="Chùa Kompong Thmo (chùa Lò Gạch)" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='Anh/BoLuyChuaLoGach/1.jpg'}else{this.style.display='none'}"></div></div><div class="body"><span class="k">Di tích khảo cổ cấp quốc gia</span><h3>Di tích Bờ Lũy – chùa Lò Gạch</h3><p>Ngôi chùa Kompong Thmo xây bằng gạch, một trong những ngôi chùa cổ nhất đất Trà Vinh.</p><span class="more">Xem chi tiết ➜</span></div></a>
+      <a href="lang-bich-hoa.html" class="gocard reveal d3 hover-zoom"><div class="photo"><div class="img-slot"><img src="Anh/LangBichHoa/1-1.jpg" alt="Làng bích họa" onerror="this.style.display='none'"></div></div><div class="body"><span class="k">Nghệ thuật đương đại</span><h3>Làng bích họa</h3><p>78 bích họa “Không gian ký ức” tái hiện đời sống, nghề truyền thống và tín ngưỡng của người Khmer.</p><span class="more">Xem chi tiết ➜</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section id="quy-trinh">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Cách chúng tôi thực hiện</span>
+      <h2>Quy trình số hóa di tích</h2>
+      <p>Từ khảo sát thực địa đến công bố trên môi trường số – mỗi bước đều có sự tham gia của đoàn viên, thanh niên.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="steps">
+      <div class="step reveal d1"><div class="circle">🔎</div><h3>1. Khảo sát</h3><p>Tìm hiểu, ghi chép thông tin và lắng nghe nhân chứng tại di tích.</p></div>
+      <div class="step reveal d2"><div class="circle">📷</div><h3>2. Thu thập</h3><p>Chụp ảnh, quay video, ghi nhận hiện vật và bích họa.</p></div>
+      <div class="step reveal d3"><div class="circle">💻</div><h3>3. Số hóa</h3><p>Xử lý, biên tập, hệ thống hóa nội dung thành kho dữ liệu số.</p></div>
+      <div class="step reveal d4"><div class="circle">🚀</div><h3>4. Lan tỏa</h3><p>Công bố trên website, mạng xã hội và các hoạt động cộng đồng.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Youth -->
+<section class="youth">
+  <div class="container reveal zoom">
+    <h2>Tuổi trẻ Song Lộc – Xung kích gìn giữ di sản</h2>
+    <p>Mỗi bức ảnh được lưu lại, mỗi câu chuyện được kể tiếp là một đóng góp nhỏ của tuổi trẻ để ký ức văn hóa không phai mờ theo năm tháng.</p>
+    <div class="pillars">
+      <span class="pillar">🌱 Xung kích</span>
+      <span class="pillar">💡 Sáng tạo</span>
+      <span class="pillar">🤝 Tình nguyện</span>
+      <span class="pillar">🇻🇳 Vì cộng đồng</span>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="lien-he">
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <h4>Đoàn TNCS Hồ Chí Minh xã Song Lộc</h4>
+        <p>Tỉnh Vĩnh Long</p>
+        <p>Công trình thanh niên: Số hóa di tích Bờ Lũy – chùa Lò Gạch và Làng bích họa “Không gian ký ức”.</p>
+        <p>Email: xasongloc2026.12@gmail.com &nbsp; <br>Điện thoại: 0909 090 090</p>
+      </div>
+      <div>
+        <h4>Liên kết nhanh</h4>
+        <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="chua-lo-gach.html">Di tích Bờ Lũy – chùa Lò Gạch</a></li>
+          <li><a href="lang-bich-hoa.html">Làng bích họa</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Nguồn tư liệu</h4>
+        <ul>
+          <li>Đoàn Thanh niên xã Song Lộc</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© 2026 Đoàn TNCS Hồ Chí Minh xã Song Lộc, tỉnh Vĩnh Long. Tư liệu được số hóa nhằm mục đích giáo dục và quảng bá văn hóa.</div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<nav class="bottom-nav" aria-label="Điều hướng nhanh">
+  <a href="index.html" class="on"><span>🏠</span>Trang chủ</a>
+  <a href="chua-lo-gach.html"><span>🏛️</span>Di tích</a>
+  <a href="lang-bich-hoa.html"><span>🎨</span>Bích họa</a>
+</nav>
+<button id="topBtn" aria-label="Lên đầu trang">↑</button>
+
+<script src="main.js"></script>
+</body>
+</html>
